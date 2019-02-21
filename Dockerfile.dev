@@ -1,0 +1,16 @@
+#For development environment
+#Base image
+FROM node:alpine
+
+#Specific workdir
+WORKDIR /app
+
+#Copy package.json and npm install
+COPY ./package.json ./
+RUN npm install
+
+#Copy all file to workdir
+COPY ./ ./
+
+#Run start
+CMD ["npm", "run", "start"]
