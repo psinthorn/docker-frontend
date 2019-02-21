@@ -25,6 +25,6 @@ RUN npm run build
 #######################
 #Install NGINX base image
 FROM nginx
-
+EXPOSE 80
 #Copy build folde from build stage to nginx public folder
 COPY --from=builder /app/build /usr/share/nginx/html
